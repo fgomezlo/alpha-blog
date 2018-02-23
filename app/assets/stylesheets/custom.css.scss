@@ -19,3 +19,34 @@
 .center {
     text-align: center
 }
+
+.jumbotron {
+    background-image: asset-url('image01.png');
+    background-size: cover;
+    height: 550px;
+}
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid slategray;
+    color: #777777
+}
+
+footer a:hover{
+    columns: #222222;
+}
+
+footer small {
+    float: left
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 15px;
+}
