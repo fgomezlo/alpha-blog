@@ -3,15 +3,29 @@
 <div class="col-md-8 offset-md-2">
   <div class="card bg-light">
     <div class="card-header">
-      <h4>Description</h4>
-    </div>
-    <div class="card-body">
-      <%= simple_format(@article.description) %>
-    </div>
-    <div class="card-footer text-muted">
-      <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
-      <%= link_to "Delete this article", article_path(@article), class: "btn btn-xs btn-danger" , method: :delete, data: {confirm: "Are you sure to do this?"} %>
-      <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
-    </div>
+      <% if @article.user %>
+        <ul class="listing">
+          <div class="row center">
+            <div class="col-md-4 offset-md-4">
+              <li>Created By</li>
+              <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+              <li><%= @article.user.username %></li>
+              <li>
+                <small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></small>
+              </li>
+            </div>
+          </div>
+        </ul>
+    <% end %>
+    <h4>Description</h4>
   </div>
+  <div class="card-body">
+    <%= simple_format(@article.description) %>
+  </div>
+  <div class="card-footer text-muted">
+    <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+    <%= link_to "Delete this article", article_path(@article), class: "btn btn-xs btn-danger" , method: :delete, data: {confirm: "Are you sure to do this?"} %>
+    <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
+  </div>
+</div>
 </div>
