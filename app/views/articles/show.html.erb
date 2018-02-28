@@ -17,6 +17,9 @@
           </div>
         </ul>
     <% end %>
+    <% if @article.categories.any? %>
+      <p>Categories: <%= render @article.categories %></p>
+    <% end %>
     <h4>Description</h4>
   </div>
   <div class="card-body">
