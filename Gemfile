@@ -42,6 +42,9 @@ gem 'will_paginate-bootstrap4'
 # Use Capistrano for deploymen
 # gem 'capistrano-rails', group: :development
 
+# Use unit test gem for integration test
+gem 'rails-controller-testing'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

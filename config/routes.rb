@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  
+
+  # category features
+  resources :categories, except: [:destroy]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
